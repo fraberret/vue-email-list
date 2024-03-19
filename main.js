@@ -4,17 +4,27 @@ createApp({
     data(){ 
     return {
 message:'hello',
-mailList:null,
+mails:[],
+
+
 }},
 methods:{
+    
     callApi(){
         axios.get( 'https://flynn.boolean.careers/exercises/api/random/mail').then(response =>{
-            this.mailList=response.data.response
-            ;
+            
+        this.mails.push(response.data.response)
+
         })
-    }
+    },
+
+   
+
+    
 },
 mounted(){
-    this.callApi()
-}
+    for (let i = 0; i < 10; i++) {
+        this.callApi();
+    
+}}
 }).mount('#app')

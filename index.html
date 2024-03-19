@@ -10,7 +10,9 @@
 
 <body>
     <div id='app'>
-        <h1>{{mailList}}</h1>
+        <ul>
+            <li v-for="mail in mails">{{mail}}</li>
+        </ul>
     </div>
     <!-- Development only cdn, disable in production -->
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
