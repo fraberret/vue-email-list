@@ -10,9 +10,11 @@
 
 <body>
     <div id='app'>
-        <ul>
+        <h1>Random mail list</h1>
+        <ul v-if="mails.length==10">
             <li v-for="mail in mails">{{mail}}</li>
         </ul>
+        <p v-else>Sta generando.....</p>
     </div>
     <!-- Development only cdn, disable in production -->
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
